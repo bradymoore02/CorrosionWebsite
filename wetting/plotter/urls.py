@@ -5,8 +5,8 @@ from django.conf import settings
 from . import views
 
 urlpatterns = [
-    path('', views.home, name='plotter-home'),
-    path('drops/', views.DropListView.as_view(), name='plotter-drops'),
+    path('', views.home, name='corrosion-home'),
+    path('techniques/', views.DropListView.as_view(), name='techniques'),
     path('drop/<int:pk>',
          views.DropDetailView.as_view(),
          name='plotter-drop-detail'),

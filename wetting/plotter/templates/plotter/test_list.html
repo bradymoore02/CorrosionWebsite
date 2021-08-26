@@ -1,0 +1,21 @@
+{% extends "plotter/base.html" %}
+{% block content %}
+<table class='table table-bordered'>
+    <thead>
+    <tr>
+    <th></th>
+    <th>Substrate</th>
+    <th>Date</th>
+    </tr>
+    </thead>
+    {% for test in test_list %}
+    <tr>
+        <td>
+    <a href="#"> Test {{ test.id }}</a>
+        </td>
+        <td> {{test.substrate}}</td>
+        <td> {{test.date.date}}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock content %}

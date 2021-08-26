@@ -1,0 +1,57 @@
+{% extends "plotter/base.html" %}
+{% load static %}
+{% block content %}
+
+        <script src="{% static 'plotter/carousel.js' %}"></script>
+        <table class='table table-bordered '>
+            <tr> <th>Number</th>  <td>{{ drop.id }}</td> </tr>
+            <tr> <th>Date</th>  <td>{{ drop.test.date.date }}</td> </tr>
+            <tr> <th>Substrate</th>  <td>{{ drop.test.substrate.name }}</td> </tr>
+            <tr> <th>Stage Temperature</th>  <td>{{ drop.stage_temp }}&#8451;</td> </tr>
+            <tr> <th>Tip Temperature</th>  <td>{{ drop.tip_temp }}&#8451;</td> </tr>
+            <tr> <th>Contact Angle</th>  <td>{{ drop.contact_angle }}&#176;</td> </tr>
+        </table>
+ <!-- <!-1- Slideshow container -1-> -->
+<!-- <div class="slideshow-container"> -->
+
+ <!--  <!-1- Full images with numbers and message Info -1-> -->
+ <!--        {% for image in drop.dropimage_set.all %} -->
+ <!--          <div class="Containers"> -->
+ <!--              <div class="MessageInfo">{{forloop.counter}} / {{drop.dropimage_set.all|length}}</div> -->
+ <!--            <img src="{{image.image.url}}" style="width:100%"> -->
+ <!--            <div class="Info">{{image.description}}</div> -->
+ <!--          </div> -->
+ <!--        {% endfor %} -->
+
+ <!--  <!-1- Back and forward buttons -1-> -->
+ <!--  <a class="Back" onclick="plusSlides(-1)">&#10094;</a> -->
+ <!--  <a class="forward" onclick="plusSlides(1)">&#10095;</a> -->
+<!-- </div> -->
+<!-- <br> -->
+
+<!-- <!-1- The circles/dots -1-> -->
+<!-- {% for image in drop.dropimage_set.all %} -->
+<!-- <div style="text-align:center"> -->
+ <!--    <span class="dots" onclick="currentSlide({{forloop.counter}})"></span> -->
+<!-- </div> -->
+<!-- {% endfor %} -->
+
+<!-- <script>SlideShow(1);</script> -->
+
+<div id='drop-carousel' class='carousel slide' data-ride='carousel'>
+  <ol class="carousel-indicators">
+    {% for image in drop.dropimage_set.all %}
+    <li data-target="#drop-carousel" data-slide-to="{{counter0}}" class= {% if counter0 == 0 %} "active" {% endif %}></li>
+    {% endfor %}
+  </ol>
+  <div class='carousel-inner'>
+    {% for image in drop.dropimage_set.all %}
+    <div class="carousel-item {% if counter0 == 0 %} active {% endif %}">
+      <img src="{{image.image.url}}" alt=""/> 
+    </div>
+    {% endfor %}
+  </div>
+  
+</div>
+
+{% endblock content %}

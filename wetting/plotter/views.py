@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from plotly.offline import plot
-from plotter.models import Drop, Substrate, Test
+from plotter.models import Technique
 from .forms import MyForm
 import plotly.express as px
 from django.utils.datastructures import MultiValueDictKeyError
@@ -20,7 +20,6 @@ def home(request):
     :returns: TODO
 
     """
-    substrates = Substrate.objects.all()
     options = [i.name for i in substrates]
     form = MyForm(request.POST or None, options=options)
     if request.method == "POST":
@@ -92,12 +91,5 @@ def home(request):
                   })
 
 
-class DropListView(generic.ListView):
-    model = Drop
-
-
-class DropDetailView(generic.DetailView):
-    model = Drop
-
-class TestListView(generic.ListView):
-    model = Test
+class TechniqueListView(generic.ListView):
+    model = Technique

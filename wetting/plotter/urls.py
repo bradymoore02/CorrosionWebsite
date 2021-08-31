@@ -6,9 +6,5 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='corrosion-home'),
-    path('techniques/', views.DropListView.as_view(), name='techniques'),
-    path('drop/<int:pk>',
-         views.DropDetailView.as_view(),
-         name='plotter-drop-detail'),
-    path('tests/', views.TestListView.as_view(), name='plotter-tests'),
+    path('techniques/', views.TechniqueListView.as_view(), name='techniques')
 ]

@@ -1,0 +1,13 @@
+{% extends "plotter/base.html" %}
+{% block content %}
+
+<h1>Techniques</h1>
+{% for technique in technique_list %}
+<h2>{{technique.name}}</h2>
+<img src="../media/images/techniques/{{technique.id}}.png" alt="No Picture" width="200" height="100">
+<p>{{technique.description}}</p>
+<a href=" {{technique.get_absolute_url}} "> More Info</a>
+<br>
+<br>
+{% endfor %}
+{% endblock content %}

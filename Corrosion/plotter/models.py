@@ -19,7 +19,10 @@ class Substrate(models.Model):
 class Technique(models.Model):
 
     name = models.CharField(max_length=100)
-    description = models.CharField(max_length=10000)
+    description = models.CharField(max_length=1000)
+    detailed_description = models.CharField(max_length=10000)
+    def get_absolute_url(self):
+        return reverse('plotter-technique-detail', args=[str(self.id)])
 
 class Test(models.Model):
 

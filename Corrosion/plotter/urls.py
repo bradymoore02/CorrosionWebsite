@@ -7,7 +7,7 @@ from . import views
 urlpatterns = [
     path('', views.home, name='corrosion-home'),
     path('techniques/', views.TechniqueListView.as_view(), name='techniques'),
-    path('technique/<int:pk>',
-         views.TechniqueDetailView.as_view(),
-         name='plotter-technique-detail')
+    path('technique/<int:pk>', views.TechniqueDetailView.as_view(), name='technique-detail'),
+    path('materials/', views.MaterialListView.as_view(), name='materials'),
+    path('material/<int:pk>', views.MaterialDetailView.as_view(), name='material-detail')
          ]

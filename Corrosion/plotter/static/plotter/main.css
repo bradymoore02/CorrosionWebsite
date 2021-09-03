@@ -90,8 +90,25 @@ a.article-title:hover {
   object-fit: contain;
 }
 
-.carousel-caption {
-  position: relative;
-  left: 0;
-  top: 0;
+
+
+.row:after {
+content: "";
+display: table;
+clear: both;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.left-column {
+  background-color: red;
+  height: 100px;
+}
+
+.right-column {
+  background-color: blue;
+  height: 100px;
 }

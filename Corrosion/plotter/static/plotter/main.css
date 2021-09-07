@@ -96,19 +96,10 @@ a.article-title:hover {
 content: "";
 display: table;
 clear: both;
+width: 100%;
 }
 
 .column {
   float: left;
   width: 50%;
-}
-
-.left-column {
-  background-color: red;
-  height: 100px;
-}
-
-.right-column {
-  background-color: blue;
-  height: 100px;
 }

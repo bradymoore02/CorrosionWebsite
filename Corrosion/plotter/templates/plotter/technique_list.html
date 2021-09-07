@@ -13,7 +13,9 @@
   </div>
   <div class='column'
     <div class='right-column'>
-      <img src="../media/images/techniques/{{technique.id}}.png" alt="No Picture" width="300">
+      {% for tech in technique.techniqueimage_set.all %}
+      <img src=../../media/{{tech.image}} alt="No Picture" width="300">
+      {% endfor %}
     </div>
   </div>
 </div>

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from plotly.offline import plot
-from plotter.models import Technique, Material
+from plotter.models import Technique, Material, Sample
 from .forms import MyForm
 import plotly.express as px
 from django.utils.datastructures import MultiValueDictKeyError
@@ -35,3 +35,6 @@ class MaterialListView(generic.ListView):
 
 class MaterialDetailView(generic.DetailView):
     model = Material
+
+class SampleDetailView(generic.DetailView):
+    model = Sample

@@ -1,22 +1,38 @@
 {% extends "plotter/base.html" %}
 {% block content %}
-  <h1>{{material.name}}</h1>
-  <img src="../media/images/materials/{{material.id}}.png" alt="No Picture" width="400" height="200">
-  <p>{{material.detailed_description}}</p>
-  <table>
+<h1>{{material.name}}</h1>
+<img src="../media/images/materials/{{material.id}}.png" alt="No Picture" width="400" height="200">
+<p>{{material.detailed_description}}</p>
+
+<table class='table table-bordered'>
+  <tr>
+    <th>Element</th>
+    <th>% Composition</th>
+  </tr>
+  {% for element,number in material.composition.items %} <!-- How do I only get the materials I want? -->
+  <tr>
+    <td>{{element}}</td>
+    <td>{{number}}</td>
+  </tr>
+{% endfor %}
+</table>
+
+
+<table class='table table-bordered'>
   <tr>
     <th>Sample number</th>
     <th>Roughness</th>
     <th>Mass before</th>
     <th>Mass after</th>
   </tr>
-  {% for sample in sample_list %} <!-- How do I only get the materials I want? -->
+  {% for sample in material.sample_set.all %} <!-- How do I only get the materials I want? -->
   <tr>
-    <td>{{sample.name}}</td>
+    <td>
+      <a href=" {{sample.get_absolute_url }} "> Sample {{ sample.number }}</a></td>
     <td>{{sample.roughness}}</td>
     <td>{{sample.mass_before}}</td>
     <td>{{sample.mass_after}}</td>
   </tr>
-</table>
 {% endfor %}
+</table>
 {% endblock content %}

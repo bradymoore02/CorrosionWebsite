@@ -1,0 +1,21 @@
+{% extends "plotter/base.html" %}
+{% block content %}
+        <h1>Sample {{sample.number}}</h1>
+        <p>{{technique.detailed_description}}</p>
+        {% for sample in sample.sampleimage_set.all %}
+        <img src=../../media/{{sample.image}} alt="No Picture" width="300">
+        {% endfor %}
+        <table class='table table-bordered'>
+          <tr>
+            <th>Roughness</th>
+            <th>Mass before</th>
+            <th>Mass after</th>
+          </tr>
+          <tr>
+            <td>{{sample.roughness}}</td>
+            <td>{{sample.mass_before}}</td>
+            <td>{{sample.mass_after}}</td>
+          </tr>
+        </table>
+
+{% endblock content %}

@@ -1,20 +1,26 @@
 {% extends "plotter/base.html" %}
 {% block content %}
 <h1>Materials</h1>
-{% for material in material_list %}
 <div class='row'>
   <div class='column'>
     <div class='left-column'>
-      <h2>{{material.name}}</h2>
-      <p>{{material.description}}</p>
-      <a href=" {{material.get_absolute_url}} "> More Info</a>
+      {% for material in material_list %}
+      <div class='row_spacing'>
+        <h2>{{material.name}}</h2>
+        <p>{{material.description}}</p>
+        <a href=" {{material.get_absolute_url}} "> More Info</a>
+      </div>
+      {% endfor %}
     </div>
   </div>
   <div class='column'
     <div class='right-column'>
-      <img src="../../media/images/materials/{{material.id}}.png" alt="No Picture" width="300">
+      {% for material in material_list %}
+      <div class='row_spacing'>
+        <img src="../../media/images/materials/{{material.id}}.png" alt="No Picture" height="150px">
+      </div>
+      {% endfor %}
     </div>
   </div>
 </div>
-{% endfor %}
 {% endblock content %}

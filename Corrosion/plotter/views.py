@@ -12,7 +12,6 @@ import plotly.graph_objects as go
 from django.shortcuts import redirect
 import re
 
-
 def home(request):
     """TODO: Docstring for home.
 
@@ -22,7 +21,6 @@ def home(request):
     """
 
     return render(request, "plotter/home.html")
-
 
 class TechniqueListView(generic.ListView):
     model = Technique

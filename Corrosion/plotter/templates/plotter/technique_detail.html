@@ -1,9 +1,18 @@
 {% extends "plotter/base.html" %}
 {% block content %}
         <h1>{{technique.name}}</h1>
-        <p>{{technique.detailed_description}}</p>
+        <p>
+          {{technique.detailed_description}}
+          <a href="{{technique.link}}">(Source)</a>
+        </p>
+
+
         {% for tech in technique.techniqueimage_set.all %}
         <img src=../../media/{{tech.image}} alt="No Picture" width="300">
+        <p>
+          {{tech.caption}}
+          <a href="{{tech.source}}"> (Image Source)</a>
+        </p>
         {% endfor %}
 
 {% endblock content %}

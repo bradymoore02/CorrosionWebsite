@@ -2,22 +2,26 @@
 {% block content %}
 
 <h1>Techniques</h1>
-{% for technique in technique_list %}
+
 <div class='row'>
   <div class='column'>
     <div class='left-column'>
+      {% for technique in technique_list %}
       <h2>{{technique.name}}</h2>
       <p>{{technique.description}}</p>
       <a href=" {{technique.get_absolute_url}} ">More Info</a>
-    </div>
-  </div>
-  <div class='column'
-    <div class='right-column'>
-      {% for tech in technique.techniqueimage_set.all %}
-      <img src=../../media/{{tech.image}} alt="No Picture" width="300">
       {% endfor %}
     </div>
   </div>
+  {% for technique in technique_list %}
+  <div class='column'
+    <div class='right-column'>
+      {% for tech in technique.techniqueimage_set.all %}
+      <img src=../../media/{{tech.image}} alt="No Picture" height="150px">
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
 </div>
-{% endfor %}
+
 {% endblock content %}

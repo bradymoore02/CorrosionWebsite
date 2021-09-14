@@ -17,6 +17,7 @@ class Technique(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     detailed_description = models.TextField()
+    link = models.CharField(max_length=1000)
     def get_absolute_url(self):
         return reverse('technique-detail', args=[str(self.id)])
     def __str__(self):
@@ -63,5 +64,8 @@ class SampleImage(models.Model):
 class TechniqueImage(models.Model):
     technique = models.ForeignKey(Technique, on_delete=models.CASCADE)
     image = models.ImageField(upload_to=technique_upload_dir)
+    caption = models.TextField()
+    source = models.TextField()
+    
     def __str__(self):
         return self.technique.name

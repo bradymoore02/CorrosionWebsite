@@ -1,4 +1,4 @@
---upgrade pip
+pip==21.2.4
 alabaster==0.7.12
 anaconda-client==1.7.2
 anaconda-navigator==2.0.3
@@ -149,7 +149,6 @@ pep8==1.7.1
 pexpect==4.8.0
 pickleshare==0.7.5
 Pillow==8.0.1
-pip==21.2.4
 pkginfo==1.6.1
 plotly==5.2.2
 pluggy==0.13.1

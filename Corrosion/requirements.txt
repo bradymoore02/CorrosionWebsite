@@ -82,7 +82,7 @@ intervaltree @ file:///tmp/build/80754af9/intervaltree_1598376443606/work
 intervene==0.6.5
 ipykernel @ file:///opt/concourse/worker/volumes/live/88f541d3-5a27-498f-7391-f2e50ca36560/volume/ipykernel_1596206680118/work/dist/ipykernel-5.3.4-py3-none-any.whl
 ipython @ file:///opt/concourse/worker/volumes/live/26969e8f-c9f7-42dc-6ffb-b3effd424c49/volume/ipython_1604101242376/work
-ipython-genutils==0.2.0
+ipython_genutils==0.2.0
 ipywidgets @ file:///tmp/build/80754af9/ipywidgets_1601490159889/work
 isort @ file:///tmp/build/80754af9/isort_1602603989581/work
 itsdangerous==1.1.0
@@ -191,7 +191,7 @@ regex @ file:///opt/concourse/worker/volumes/live/7f106f75-0e11-45be-4c20-6b071e
 requests @ file:///tmp/build/80754af9/requests_1592841827918/work
 rope @ file:///tmp/build/80754af9/rope_1602264064449/work
 Rtree==0.9.4
-ruamel-yaml==0.15.87
+ruamel_yaml==0.15.87
 scikit-image==0.17.2
 scikit-learn @ file:///opt/concourse/worker/volumes/live/111833a2-339b-4578-413b-7337bb8fe64a/volume/scikit-learn_1598376920601/work
 scipy @ file:///opt/concourse/worker/volumes/live/851446f6-a052-41c4-4243-67bb78999b49/volume/scipy_1604596178167/work
